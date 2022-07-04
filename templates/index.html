@@ -1,0 +1,153 @@
+<HTML>
+<HEAD> 
+<TITLE>Traffic Management</TITLE>
+<link rel="stylesheet" href="styles.css">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Vehicles', 'Numbers'],
+          ['Car',     15],
+          ['Truck',    5],
+          ['Bike',  2],
+          
+        ]);
+
+        var options = {
+          title: 'Vehicle Count',
+		  is3D: true,
+		  backgroundColor : "0ADAFF"
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+	  google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBarColors);
+
+function drawBarColors() {
+      var data = google.visualization.arrayToDataTable([
+        ['Traffic Density', 'Time'],
+        ['7.00 - 10.00am', 8175000],
+        ['10.00 - 2.00pm', 3792000],
+        ['2.00 - 6.00pm', 2695000],
+        ['6.00 - 10.00pm', 8173000],
+        ['10.00 - 2.00am', 1526000]
+		
+      ]);
+
+      var options = {
+        title: 'Traffic Density during the day',
+        chartArea: {width: '50%'},
+        colors: ['#b0120a', '#ffab91'],
+		backgroundColor : "0ADAFF",
+        hAxis: {
+          title: 'Density (avg. no. of vehicles per km)',
+          minValue: 0
+        },
+        vAxis: {
+          title: 'Time'
+        }
+      };
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+    </script>
+</HEAD>
+<BODY>
+<center>
+<TABLE BORDER=3  WIDTH=1200>
+<TR> 
+<TD colspan=4><center>
+<font color=#000000 size=48>Traffic Management using IoT and Deep Learning</font>
+</center></TD>
+</TR>
+<TR>
+<TD colspan=4 BACKGROUND="bg.JPG" height = 150>
+</TD>
+</TR> 
+<TR ALIGN=CENTER>
+ <TD HEIGHT=5><A HREF="home.HTML">HOME </A></TD>
+ <TD><A HREF="#about">ABOUT</A></TD>
+ <TD><A HREF="#working">WORKING</A></TD>
+ <TD><A HREF="#contact">DONE BY</A></TD>
+</TR>
+<TR>
+<TD colspan = 4 height = 4><center></TD>
+</TR>
+<TR>
+<TD COLSPAN=2 BGCOLOR=0ADAFF HEIGHT=600>
+<BR>
+<div id="piechart" style="width: 600px; height: 500px;"></div></TD>
+<TD COLSPAN=2 BGCOLOR=0ADAFF HEIGHT=600>
+<div id="chart_div" align = "right" style="width: 600px; height: 500px;"></div>
+</TD>
+</TR>
+<TR>
+<TD COLSPAN=4 BGCOLOR=#3090C7 HEIGHT=200>
+<CENTER> 
+<div id = "about">                                                                               
+<h1><u>How does our system work?</h1><CENTER></u>
+	<h4><p>The analysis of traffic includes object detection and tracking and counting of vehicles<br>
+	The video from the cameras at the signals runs through our Yolo Model and returns the number of vehicles.<br>The numbers between the different roads
+	are then compared and the traffic signal is changed accordingly.</p></h4>
+<div class="row">
+  <div class="column">
+    <img src="1.jpg" alt="Nature">
+  </div>
+  <div class="column">
+    <img src="2.jpg" alt="Snow">
+  </div>
+  <div class="column">
+    <img src="3.jpg" alt="Mountains">
+  </div>
+</div>
+</TD>
+</TR>
+</div>
+<TR>
+<TD COLSPAN=4 BGCOLOR=0ADAFF HEIGHT=400>
+<CENTER><BR>
+<div id ="working">
+<video width="600" height="300" controls>
+  <source src="results05.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>                                                                          
+<h1>For the real time video stream click below</h1><CENTER>
+<a href = "http://192.168.186.136"><h4>Click here to view</a></h4>
+</TD>
+</TR>
+</DIV>
+<TR>
+<BR>
+<TH COLSPAN=2 BGCOLOR=#3090C7 HEIGHT=50><u><h2>Team members</h2></TH>
+<TH COLSPAN=2 BGCOLOR=#3090C7 HEIGHT=50><u><h2>Under the guidance of:</h2></TH>
+</TR>
+<TR>
+<TD COLSPAN=2 BGCOLOR=#3090C7 HEIGHT=200>
+<BR> 
+<div id = "contact">                                                                               
+<center><h3>
+<p>Aakifah Hassan [002]</p>
+<p>Abriti Chakraborty [007]</p>
+<p>Aishwarya Suresh [013]</p>
+<p>Dhimanth Shukla [044]</p>
+<p>Department of Computer Science</p>
+</h3>
+</TD>
+<TD COLSPAN=2 BGCOLOR=#3090C7 HEIGHT=200>
+<center>
+<h3><p>Mrs. Anupama Girish<br>Assistant Professor,<br>Department of Computer Science<br>DSCE</p></h3>
+</TD>
+</TR>
+</div>
+</TABLE>  
+</center>
+</BODY>
+</HTML>    
